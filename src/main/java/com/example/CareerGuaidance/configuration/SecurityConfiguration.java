@@ -81,7 +81,7 @@ public class SecurityConfiguration {
 
 	    config.setAllowedOrigins(List.of(
 	            "http://localhost:5173",
-	            "https://careerguidance-frontend.vercel.app"
+	            "https://careerguidanceproject.vercel.app"
 	        ));
 	    
 	    config.setAllowedMethods(List.of("GET","POST","PUT","DELETE","OPTIONS"));
