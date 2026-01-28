@@ -79,17 +79,17 @@ public class SecurityConfiguration {
 	public CorsConfigurationSource corsConfigurationSource() {
 	    CorsConfiguration config = new CorsConfiguration();
 
-	    config.setAllowedOrigins(List.of(
-	    		"https://careerguidance-project-j5s8gyzyq-srinivas-projects-2bd368ff.vercel.app",
-	            "https://careerguidanceproject.vercel.app"
+	    config.setAllowedOriginPatterns(List.of(
+	            "https://*.vercel.app"
 	        ));
-	    
-	    config.setAllowedMethods(List.of("GET","POST","PUT","DELETE","OPTIONS"));
-	    config.setAllowedHeaders(List.of("Authorization","Content-Type"));
-	    config.setAllowCredentials(true);
 
-	    UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
-	    source.registerCorsConfiguration("/**", config);
+	        config.setAllowedMethods(List.of("GET","POST","PUT","DELETE","OPTIONS"));
+	        config.setAllowedHeaders(List.of("*"));
+	        config.setAllowCredentials(true);
+
+	        UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
+	        source.registerCorsConfiguration("/**", config);
+
 
 	    return source;
 	}
